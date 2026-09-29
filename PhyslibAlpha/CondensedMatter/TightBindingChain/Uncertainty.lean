@@ -6,7 +6,7 @@ Authors: Eduardo Nava-Hernandez
 module
 
 public import PhyslibAlpha.CondensedMatter.TightBindingChain.OpenBoundary
-public import PhyslibAlpha.AlgebraicFramework.HilbertSpace.State.VectorUncertainty
+public import PhyslibAlpha.ProbabilisticTheory.HilbertSpace.State.VectorUncertainty
 
 /-!
 
@@ -85,7 +85,7 @@ lemma inner_bracket_openHamiltonian_position_eq (m n : Fin T.N) :
 /-- **Energy–position uncertainty of the open tight binding chain.** In every state `ω`,
 `Cov(H, X)² + ⟨⁅H, X⁆⟩² ≤ Var H · Var X`. -/
 lemma robertson_schrodinger_openHamiltonian_position
-    (ω : 𝓢[EuclideanSpace ℂ (Fin T.N) →L[ℂ] EuclideanSpace ℂ (Fin T.N)]) :
+    (ω : 𝓢[ℂ, EuclideanSpace ℂ (Fin T.N) →L[ℂ] EuclideanSpace ℂ (Fin T.N)]) :
     covariance ω T.openHamiltonianObservable T.positionObservable ^ 2 +
         ω⟨⁅T.openHamiltonianObservable, T.positionObservable⁆⟩ ^ 2 ≤
       variance ω T.openHamiltonianObservable * variance ω T.positionObservable :=
