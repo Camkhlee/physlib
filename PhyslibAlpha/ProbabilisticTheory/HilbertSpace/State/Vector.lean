@@ -7,7 +7,7 @@ module
 
 public import PhyslibAlpha.ProbabilisticTheory.StarAlgebra.Restrict
 public import PhyslibAlpha.ProbabilisticTheory.State.Basic
-public import Mathlib
+public import Mathlib.Analysis.InnerProductSpace.StarOrder
 
 /-!
 

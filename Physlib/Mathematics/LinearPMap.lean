@@ -5,7 +5,7 @@ Authors: Gregory J. Loges
 -/
 module
 
-public import Mathlib.Analysis.InnerProductSpace.LinearPMap
+public import Mathlib.LinearAlgebra.LinearPMap
 /-!
 
 # LinearPMap
