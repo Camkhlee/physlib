@@ -37,6 +37,8 @@ public import PhyslibAlpha.CondensedMatter.TightBindingChain.Current
 public import PhyslibAlpha.CondensedMatter.TightBindingChain.CurrentEigenstates
 public import PhyslibAlpha.CondensedMatter.TightBindingChain.OpenBoundary
 public import PhyslibAlpha.CondensedMatter.TightBindingChain.Uncertainty
+public import PhyslibAlpha.Electromagnetism.BoxChargeConservation
+public import PhyslibAlpha.Electromagnetism.Distributional.WireJunction
 public import PhyslibAlpha.Mathematics.Analysis.Normed.HolderDual
 public import PhyslibAlpha.Mathematics.Analysis.RealBounds
 public import PhyslibAlpha.Mathematics.Convex.Choquet.BoundaryRepresentation
