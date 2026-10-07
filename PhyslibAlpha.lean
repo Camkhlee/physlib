@@ -40,6 +40,7 @@ public import PhyslibAlpha.CondensedMatter.TightBindingChain.ElementalUncertaint
 public import PhyslibAlpha.CondensedMatter.TightBindingChain.LongChainLimit
 public import PhyslibAlpha.CondensedMatter.TightBindingChain.LongChainMonotonicity
 public import PhyslibAlpha.CondensedMatter.TightBindingChain.MandelstamTamm
+public import PhyslibAlpha.CondensedMatter.TightBindingChain.MandelstamTammMaxCurrent
 public import PhyslibAlpha.CondensedMatter.TightBindingChain.MaxCurrentState
 public import PhyslibAlpha.CondensedMatter.TightBindingChain.MaxCurrentVariances
 public import PhyslibAlpha.CondensedMatter.TightBindingChain.OpenBoundary
