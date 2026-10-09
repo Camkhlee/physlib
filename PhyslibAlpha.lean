@@ -40,12 +40,14 @@ public import PhyslibAlpha.CondensedMatter.TightBindingChain.ElementalUncertaint
 public import PhyslibAlpha.CondensedMatter.TightBindingChain.LongChainLimit
 public import PhyslibAlpha.CondensedMatter.TightBindingChain.LongChainMonotonicity
 public import PhyslibAlpha.CondensedMatter.TightBindingChain.MandelstamTamm
+public import PhyslibAlpha.CondensedMatter.TightBindingChain.MandelstamTammMaxCurrent
 public import PhyslibAlpha.CondensedMatter.TightBindingChain.MaxCurrentState
 public import PhyslibAlpha.CondensedMatter.TightBindingChain.MaxCurrentVariances
 public import PhyslibAlpha.CondensedMatter.TightBindingChain.OpenBoundary
 public import PhyslibAlpha.CondensedMatter.TightBindingChain.Saturation
 public import PhyslibAlpha.CondensedMatter.TightBindingChain.SpeedLimit
 public import PhyslibAlpha.CondensedMatter.TightBindingChain.Uncertainty
+public import PhyslibAlpha.CondensedMatter.TightBindingChain.VelocityBand
 public import PhyslibAlpha.Electromagnetism.BoxChargeConservation
 public import PhyslibAlpha.Electromagnetism.TemperedDistributional.WireJunction
 public import PhyslibAlpha.Mathematics.Analysis.Normed.HolderDual
@@ -298,6 +300,7 @@ public import PhyslibAlpha.QuantumMechanics.HilbertSpaces.FiniteTarget.ProductSt
 public import PhyslibAlpha.QuantumMechanics.QuantumHarmonicOscillator
 public import PhyslibAlpha.QuantumMechanics.StinespringDilation
 public import PhyslibAlpha.Relativity.General.Schwarzschild.IncompressibleSphere
+public import PhyslibAlpha.Relativity.PauliMatrices.Anticommuting
 public import PhyslibAlpha.SpaceAndTime.Space.Surfaces.HalfPlane
 public import PhyslibAlpha.SpaceAndTime.Space.Surfaces.Line
 public import PhyslibAlpha.SpaceAndTime.Space.Surfaces.Ring
