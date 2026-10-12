@@ -5,8 +5,8 @@ Authors: Joseph Tooby-Smith
 -/
 module
 
-public import Physlib.Electromagnetism.Distributional.Dynamics.CurrentDensity
-public import Physlib.Electromagnetism.Distributional.Dynamics.KineticTerm
+public import Physlib.Electromagnetism.TemperedDistributional.Dynamics.CurrentDensity
+public import Physlib.Electromagnetism.TemperedDistributional.Dynamics.KineticTerm
 /-!
 
 # The Lagrangian in electromagnetism
@@ -147,7 +147,7 @@ lemma gradFreeCurrentPotential_eq_tensor {d}
 
 /-!
 
-### D.2. The gradient of the lagrangian density
+### A.2. The gradient of the lagrangian density
 
 Defined through `gradLagrangian_eq_kineticTerm_sub`.
 
