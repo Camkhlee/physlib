@@ -87,7 +87,7 @@ Requirements:
     done: true
     location: >
       Physlib/Electromagnetism/Dynamics/KineticTerm.lean (kineticTerm, gradKineticTerm);
-      Physlib/Electromagnetism/Distributional/Dynamics/KineticTerm.lean (gradKineticTerm)
+      Physlib/Electromagnetism/TemperedDistributional/Dynamics/KineticTerm.lean (gradKineticTerm)
 
   - description: >
       The Lagrangian is defined from the electromagnetic potential, together with the free
@@ -95,4 +95,4 @@ Requirements:
     done: true
     location: >
       Physlib/Electromagnetism/Dynamics/Lagrangian.lean (lagrangian, freeCurrentPotential, gradLagrangian, gradFreeCurrentPotential);
-      Physlib/Electromagnetism/Distributional/Dynamics/Lagrangian.lean (gradLagrangian, gradFreeCurrentPotential)
+      Physlib/Electromagnetism/TemperedDistributional/Dynamics/Lagrangian.lean (gradLagrangian, gradFreeCurrentPotential) 
