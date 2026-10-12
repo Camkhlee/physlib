@@ -79,7 +79,7 @@ variable {G : Type*} [AddCommGroup G] [TopologicalSpace G] [IsTopologicalAddGrou
 /-- **Bochner's theorem on a locally compact abelian group**, existence half.
 A positive-definite function that is continuous at `0` is the Fourier–Stieltjes transform of a
 finite inner regular measure on the Pontryagin dual. -/
-theorem IsPositiveDefiniteSub.exists_pontryaginMeasureTransform_eq_of_continuousAt {φ : G → ℂ}
+lemma IsPositiveDefiniteSub.exists_pontryaginMeasureTransform_eq_of_continuousAt {φ : G → ℂ}
     (hφ : IsPositiveDefiniteSub φ) (hφ₀ : ContinuousAt φ 0) :
     ∃ μ : FiniteMeasure (PontryaginDual (Multiplicative G)),
       μ.toMeasure.InnerRegular ∧ μ.pontryaginMeasureTransform = φ := by
@@ -104,7 +104,7 @@ theorem IsPositiveDefiniteSub.exists_pontryaginMeasureTransform_eq_of_continuous
 /-- **Unique inner regular form of Bochner's theorem.** A positive-definite function continuous at
 `0` has a unique finite inner regular representing measure on the Pontryagin dual. No countability
 or metrizability assumption is needed. -/
-theorem
+lemma
     IsPositiveDefiniteSub.existsUnique_innerRegular_pontryaginMeasureTransform_eq_of_continuousAt
     {φ : G → ℂ} (hφ : IsPositiveDefiniteSub φ) (hφ₀ : ContinuousAt φ 0) :
     ∃! μ : FiniteMeasure (PontryaginDual (Multiplicative G)),
@@ -117,7 +117,7 @@ theorem
 /-- **Bochner's characterization without countability assumptions.** A function on a locally
 compact abelian group is continuous and positive definite if and only if it is the
 Fourier–Stieltjes transform of a unique finite inner regular measure on the Pontryagin dual. -/
-theorem
+lemma
     continuous_and_isPositiveDefiniteSub_iff_existsUnique_innerRegular_pontryaginMeasureTransform_eq
     (φ : G → ℂ) :
     (Continuous φ ∧ IsPositiveDefiniteSub φ) ↔
@@ -137,7 +137,7 @@ theorem
 function is continuous and positive definite if and only if it is the Fourier–Stieltjes
 transform of a unique finite positive Borel measure on the dual group. The dual is Polish when
 the group is second countable. -/
-theorem continuous_and_isPositiveDefiniteSub_iff_existsUnique_pontryaginMeasureTransform_eq
+lemma continuous_and_isPositiveDefiniteSub_iff_existsUnique_pontryaginMeasureTransform_eq
     [PolishSpace (PontryaginDual (Multiplicative G))] (φ : G → ℂ) :
     (Continuous φ ∧ IsPositiveDefiniteSub φ) ↔
       ∃! μ : FiniteMeasure (PontryaginDual (Multiplicative G)),
