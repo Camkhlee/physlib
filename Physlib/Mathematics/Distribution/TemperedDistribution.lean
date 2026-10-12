@@ -21,6 +21,10 @@ define distributions and some properties on them.
 The distributions from a space `E` to space `F` can be thought of as a generalization of
 functions from `E` to `F`. We give a more precise definition of distributions below.
 
+In this file we define distributions generally. Properties of distributions directly related to
+`Space` are defined in the `Physlib.SpaceAndTime.Space` directory, for example in
+`Physlib.SpaceAndTime.Space.DistOfFunction`.
+
 ## ii. Key results
 
 - `E →d[𝕜] F` is the type of distributions from `E` to `F`.
@@ -32,22 +36,22 @@ functions from `E` to `F`. We give a more precise definition of distributions be
 - `Distribution.ofFiniteMeasure_eq_iff` says that finite measures are determined by their
   associated complex scalar distributions.
 
-## iii. Table of Contents
+## iii. Table of contents
 
 - A. The definition of a distribution
 - B. Construction of distributions from linear maps
 - C. Derivatives of distributions
 - D. Fourier transform of distributions
+  - D.1. Bridge to Mathlib tempered distributions
 - E. Specific distributions
+  - E.1. The constant distribution
+  - E.2. Distributions associated to finite measures
+  - E.3. The dirac delta distribution
+  - E.4. The heaviside step function
 
 ## iv. References
 
 * None.
-
-## v. Implementation notes
-
-- In this file we will define distributions generally, in `Physlib.SpaceAndTime.Distributions`
-  we define properties of distributions directly related to `Space`.
 
 -/
 

@@ -147,7 +147,7 @@ lemma gradFreeCurrentPotential_eq_tensor {d}
 
 /-!
 
-### D.2. The gradient of the lagrangian density
+### A.2. The gradient of the lagrangian density
 
 Defined through `gradLagrangian_eq_kineticTerm_sub`.
 
