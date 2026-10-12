@@ -240,6 +240,7 @@ public import Physlib.Particles.SuperSymmetry.MSSMNu.AnomalyCancellation.OrthogY
 public import Physlib.Particles.SuperSymmetry.MSSMNu.AnomalyCancellation.Permutations
 public import Physlib.Particles.SuperSymmetry.MSSMNu.AnomalyCancellation.Y3
 public import Physlib.Particles.SuperSymmetry.N1.Basic
+public import Physlib.Particles.SuperSymmetry.N1.Superpotential
 public import Physlib.Particles.SuperSymmetry.SU5.ChargeSpectrum.AllowsTerm
 public import Physlib.Particles.SuperSymmetry.SU5.ChargeSpectrum.Basic
 public import Physlib.Particles.SuperSymmetry.SU5.ChargeSpectrum.Completions
@@ -454,6 +455,7 @@ public import Physlib.Relativity.Tensors.ComplexTensor.Vector.Pre.Contraction
 public import Physlib.Relativity.Tensors.ComplexTensor.Vector.Pre.Modules
 public import Physlib.Relativity.Tensors.ComponentIdx.Basic
 public import Physlib.Relativity.Tensors.ComponentIdx.Contraction
+public import Physlib.Relativity.Tensors.ComponentIdx.Insert
 public import Physlib.Relativity.Tensors.ComponentIdx.Pair
 public import Physlib.Relativity.Tensors.ComponentIdx.Product
 public import Physlib.Relativity.Tensors.ComponentIdx.Single
