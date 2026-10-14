@@ -107,9 +107,10 @@ lemma oneDimPointParticleCurrentDensity_chargeDensity (c : SpeedOfLight) (q : �
 /-- The electromagnetic potential of a point particle stationary at `r₀`
   of 1d space. -/
 noncomputable def oneDimPointParticle (𝓕 : FreeSpace) (q : ℝ) (r₀ : Space 1) :
-    TempDistElectromagneticPotential 1 := (SpaceTime.distTimeSlice 𝓕.c).symm <| Space.constantTime <|
-  distOfFunction (fun x => ((- (q * 𝓕.μ₀ * 𝓕.c)/ 2) * ‖x - r₀‖) • Lorentz.Vector.basis (Sum.inl 0))
-    (by fun_prop)
+    TempDistElectromagneticPotential 1 := (SpaceTime.distTimeSlice 𝓕.c).symm <| Space.constantTime
+  <| distOfFunction (fun x => ((- (q * 𝓕.μ₀ * 𝓕.c)/ 2) * ‖x - r₀‖) • Lorentz.Vector.basis
+  (Sum.inl 0))
+  (by fun_prop)
 
 lemma oneDimPointParticle_eq_distTranslate (𝓕 : FreeSpace) (q : ℝ) (r₀ : Space 1) :
     oneDimPointParticle 𝓕 q r₀ = ((SpaceTime.distTimeSlice 𝓕.c).symm <|

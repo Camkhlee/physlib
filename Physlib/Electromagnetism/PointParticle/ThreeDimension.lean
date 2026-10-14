@@ -147,8 +147,8 @@ open Real
 /-- The electromagnetic potential of a point particle stationary at `r₀`
   of 3d space. -/
 noncomputable def threeDimPointParticle (𝓕 : FreeSpace) (q : ℝ) (r₀ : Space 3) :
-    TempDistElectromagneticPotential 3 := (SpaceTime.distTimeSlice 𝓕.c).symm <| Space.constantTime <|
-  distOfFunction (fun x => (((q * 𝓕.μ₀ * 𝓕.c)/ (4 * π)) * ‖x - r₀‖⁻¹) •
+    TempDistElectromagneticPotential 3 := (SpaceTime.distTimeSlice 𝓕.c).symm <| Space.constantTime
+  <| distOfFunction (fun x => (((q * 𝓕.μ₀ * 𝓕.c)/ (4 * π)) * ‖x - r₀‖⁻¹) •
     Lorentz.Vector.basis (Sum.inl 0))
     (((IsDistBounded.inv_shift _).const_mul_fun _).smul_const _)
 
