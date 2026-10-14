@@ -24,11 +24,11 @@ Maxwell's equations with sources, i.e. Gauss's law and Ampère's law.
 
 ## iii. Table of contents
 
-- A. Is Extema condition in the distributional case
+- A. Is Extrema condition in the distributional case
   - A.1. IsExtrema and Gauss's law and Ampère's law
   - A.2. IsExtrema in terms of Vector Potentials
-  - A.3. The exterma condition in terms of tensors
-  - A.4. The invariance of the exterma condition under Lorentz transformations
+  - A.3. The extrema condition in terms of tensors
+  - A.4. The invariance of the extrema condition under Lorentz transformations
 
 ## iv. References
 
