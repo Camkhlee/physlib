@@ -171,7 +171,7 @@ lemma isExtrema_iff_vectorPotential {𝓕 : FreeSpace}
 
 /-!
 
-### A.3. The exterma condition in terms of tensors
+### A.3. The extrema condition in terms of tensors
 
 We show that `A` is an extrema of the lagrangian if and only if the equation
 $$\frac{1}{\mu_0} \partial_\kappa F^{\kappa \nu'} - J^{\nu'} = 0,$$
@@ -209,9 +209,9 @@ lemma isExterma_iff_tensor {𝓕 : FreeSpace}
 
 /-!
 
-### A.4. The invariance of the exterma condition under Lorentz transformations
+### A.4. The invariance of the extrema condition under Lorentz transformations
 
-We show that the Exterma condition is invariant under Lorentz transformations.
+We show that the Extrema condition is invariant under Lorentz transformations.
 This implies that if an electromagnetic potential is an extrema in one inertial frame,
 it is also an extrema in any other inertial frame.
 In otherwords that the Maxwell's equations are Lorentz invariant.
