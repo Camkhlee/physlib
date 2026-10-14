@@ -48,7 +48,7 @@ open Physlib
 open Distribution SchwartzMap
 open Space MeasureTheory
 
-namespace DistElectromagneticPotential
+namespace TempDistElectromagneticPotential
 
 /-!
 
@@ -59,7 +59,7 @@ namespace DistElectromagneticPotential
 /-- The current density of a point particle stationary at the origin
   of 1d space. -/
 noncomputable def oneDimPointParticleCurrentDensity (c : SpeedOfLight) (q : ℝ) (r₀ : Space 1) :
-    DistLorentzCurrentDensity 1 := (SpaceTime.distTimeSlice c).symm <|
+    TempDistLorentzCurrentDensity 1 := (SpaceTime.distTimeSlice c).symm <|
   constantTime ((c * q) • diracDelta' ℝ r₀ (Lorentz.Vector.basis (Sum.inl 0)))
 
 lemma oneDimPointParticleCurrentDensity_eq_distTranslate (c : SpeedOfLight) (q : ℝ) (r₀ : Space 1) :
@@ -76,7 +76,7 @@ lemma oneDimPointParticleCurrentDensity_eq_distTranslate (c : SpeedOfLight) (q :
 lemma oneDimPointParticleCurrentDensity_currentDensity (c : SpeedOfLight) (q : ℝ) (r₀ : Space 1) :
     (oneDimPointParticleCurrentDensity c q r₀).currentDensity c = 0 := by
   ext ε i
-  simp [oneDimPointParticleCurrentDensity, DistLorentzCurrentDensity.currentDensity,
+  simp [oneDimPointParticleCurrentDensity, TempDistLorentzCurrentDensity.currentDensity,
     Lorentz.Vector.spatialCLM, constantTime_apply]
 
 @[simp]
@@ -84,7 +84,7 @@ lemma oneDimPointParticleCurrentDensity_chargeDensity (c : SpeedOfLight) (q : �
     (oneDimPointParticleCurrentDensity c q r₀).chargeDensity c =
     constantTime (q • diracDelta ℝ r₀) := by
   ext ε
-  simp only [DistLorentzCurrentDensity.chargeDensity, one_div, Lorentz.Vector.temporalCLM,
+  simp only [TempDistLorentzCurrentDensity.chargeDensity, one_div, Lorentz.Vector.temporalCLM,
     Fin.isValue, oneDimPointParticleCurrentDensity, map_smul, LinearMap.coe_mk, AddHom.coe_mk,
     ContinuousLinearEquiv.apply_symm_apply, FunLike.coe_smul,
     ContinuousLinearMap.coe_comp, LinearMap.coe_toContinuousLinearMap', Pi.smul_apply,
@@ -107,7 +107,7 @@ lemma oneDimPointParticleCurrentDensity_chargeDensity (c : SpeedOfLight) (q : �
 /-- The electromagnetic potential of a point particle stationary at `r₀`
   of 1d space. -/
 noncomputable def oneDimPointParticle (𝓕 : FreeSpace) (q : ℝ) (r₀ : Space 1) :
-    DistElectromagneticPotential 1 := (SpaceTime.distTimeSlice 𝓕.c).symm <| Space.constantTime <|
+    TempDistElectromagneticPotential 1 := (SpaceTime.distTimeSlice 𝓕.c).symm <| Space.constantTime <|
   distOfFunction (fun x => ((- (q * 𝓕.μ₀ * 𝓕.c)/ 2) * ‖x - r₀‖) • Lorentz.Vector.basis (Sum.inl 0))
     (by fun_prop)
 
@@ -256,5 +256,5 @@ lemma oneDimPointParticle_isExterma (𝓕 : FreeSpace) (q : ℝ) (r₀ : Space 1
     rw [gradLagrangian_sum_inr_i]
     simp
 
-end DistElectromagneticPotential
+end TempDistElectromagneticPotential
 end Electromagnetism
