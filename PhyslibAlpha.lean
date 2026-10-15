@@ -51,6 +51,7 @@ public import PhyslibAlpha.CondensedMatter.Crystal.Folner
 public import PhyslibAlpha.CondensedMatter.Crystal.Geometry
 public import PhyslibAlpha.CondensedMatter.Crystal.Graph
 public import PhyslibAlpha.CondensedMatter.Crystal.InvariantState
+public import PhyslibAlpha.CondensedMatter.Crystal.InvariantStateUncertainty
 public import PhyslibAlpha.CondensedMatter.Crystal.ManyBody
 public import PhyslibAlpha.CondensedMatter.Crystal.PointGroup.Basic
 public import PhyslibAlpha.CondensedMatter.Crystal.PointGroup.Count
@@ -377,6 +378,7 @@ public import PhyslibAlpha.ProbabilisticTheory.StarAlgebra.Lie
 public import PhyslibAlpha.ProbabilisticTheory.StarAlgebra.Observable
 public import PhyslibAlpha.ProbabilisticTheory.StarAlgebra.Restrict
 public import PhyslibAlpha.ProbabilisticTheory.StarAlgebra.SelfAdjoint
+public import PhyslibAlpha.ProbabilisticTheory.StarAlgebra.StateUncertainty
 public import PhyslibAlpha.ProbabilisticTheory.StarAlgebra.Statistics
 public import PhyslibAlpha.ProbabilisticTheory.StarAlgebra.Traciality
 public import PhyslibAlpha.ProbabilisticTheory.State.Barycenter
