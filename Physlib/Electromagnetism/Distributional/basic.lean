@@ -21,7 +21,8 @@ electromagnetism. Mathematically it is related to a connection
 on a `U(1)`-bundle.
 
 We define the electromagnetic potential as a distribution from
-spacetime to contravariant Lorentz vectors.
+spacetime to contravariant Lorentz vectors. The notation "𝓓'(Ω, F)" is used for the
+space of `F`-valued distributions on the open set `Ω`.
 
 ## ii. Key results
 
