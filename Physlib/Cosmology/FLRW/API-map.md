@@ -75,13 +75,17 @@ equations with Λ is a solution without Λ for the combined fluid. [19]
 
 ### Density parameters, the standard model and the age
 
-The critical density is ρ_cr = 3 H² / (8πG), and the density parameters are Ω = ρ / ρ_cr,
-Ω_K = −k c² / (H² a²) and Ω_Λ = Λ c² / (3 H²); the first-order Friedmann equation is the closure
-relation Ω + Ω_Λ + Ω_K = 1. [14]
+The critical density of an FLRW model is ρ_cr = 3 H² / (8πG), and the density parameters are
+Ω = ρ / ρ_cr for a cosmic fluid in the model, Ω_K = −k c² / (H² a²), k being the curvature parameter
+of its spatial geometry, and Ω_Λ = Λ c² / (3 H²), the density parameter of the cosmological constant
+as a fluid; folding the cosmological constant into the fluid adds Ω_Λ to its density parameter. [14]
+For a solution of the Friedmann equations, the first-order equation is the closure relation
+Ω + Ω_Λ + Ω_K = 1 at the times of its interval at which H ≠ 0. [6]
 
 The standard cosmological model has reduced Hubble function
-E(x)² = Ω_Λ + Ω_m x⁻³ + Ω_r x⁻⁴ + Ω_K x⁻², with H = H₀ E(a / a₀) for matter and radiation obeying
-their scaling laws, and with radiation–matter and matter–Λ equality scale factors. [15] The age
+E(x)² = Ω_Λ + Ω_m x⁻³ + Ω_r x⁻⁴ + Ω_K x⁻², with H = H₀ E(a / a₀) for a solution of the Friedmann
+equations whose cosmic fluid is made of matter and radiation obeying their scaling laws between two
+times of its interval, and with radiation–matter and matter–Λ equality scale factors. [15] The age
 of the universe is t₀ = H₀⁻¹ ∫₀¹ dx / (x E(x)). [16]
 
 ### Energy conditions and acceleration
@@ -90,8 +94,8 @@ The null, weak, strong and dominant energy conditions of the cosmic fluid are de
 implications between them: the dominant condition implies the weak one, and the weak and strong
 conditions each imply the null one. [20] On the interval of a solution of the Friedmann equations
 the universe accelerates, 0 < ∂ₜ ∂ₜ a, exactly when ρ + 3 p / c² < 0, without and with Λ; and the
-deceleration parameter is q = ½ Σ_i Ω_i (1 + 3 w_i) in terms of the density parameters, with its
-ΛCDM special case. [21]
+deceleration parameter is q = ½ Σ_i Ω_i (1 + 3 w_i) in terms of the density parameters of
+barotropic components, with its ΛCDM special case. [21]
 
 ### Eternal expansion and the Big Bang
 
@@ -114,7 +118,9 @@ has a Big Bang in the finite past. [23] The de Sitter model, by contrast, is def
 4. Physlib/Cosmology/FLRW/Basic.lean — `CosmicFluid`, `CosmicFluid.empty`,
    `FLRW.FriedmannSolution`
 5. Physlib/Cosmology/FLRW/MatterContent.lean — `FLRW.FriedmannSolution.continuityEquation`
-6. Physlib/Cosmology/FLRW/DensityParameters.lean — `FLRW.FriedmannSolution.densityParameter_add_lambda_add_curvature`
+6. Physlib/Cosmology/FLRW/DensityParameters.lean —
+   `FLRW.FriedmannSolution.densityParameter_add_lambda_add_curvature`,
+   `FLRW.FriedmannSolution.densityParameter_add_curvature`
 7. Physlib/Cosmology/FLRW/Solutions.lean — `FLRW.milne`, `FLRW.friedmannSolution_milne`
 8. Physlib/Cosmology/FLRW/Basic.lean — `FirstOrderFriedmann`, `SecondOrderFriedmann`
 9. Physlib/Cosmology/FLRW/Basic.lean — `hubbleConstant`, `hubbleConstant_ne_zero`
@@ -129,11 +135,13 @@ has a Big Bang in the finite past. [23] The de Sitter model, by contrast, is def
    `density_scaling_dust`, `density_scaling_radiation`, `density_scaling_vacuum`
 13. Physlib/Cosmology/FLRW/MatterContent.lean — `firstOrderFriedmann_iff_lambdaFluid`,
    `secondOrderFriedmann_iff_lambdaFluid`, `cosmologicalConstantPressure_eq_barotropic`
-14. Physlib/Cosmology/FLRW/DensityParameters.lean — `criticalDensity`, `densityParameter`,
-   `curvatureDensityParameter`, `lambdaDensityParameter`,
-   `densityParameter_add_lambda_add_curvature`, `densityParameter_add_curvature`
+14. Physlib/Cosmology/FLRW/DensityParameters.lean — `FLRW.criticalDensity`,
+   `FLRW.densityParameter`, `FLRW.curvatureDensityParameter`, `FLRW.lambdaDensityParameter`,
+   `FLRW.lambdaDensityParameter_eq_densityParameter`, `FLRW.densityParameter_addCosmologicalConstant`
 15. Physlib/Cosmology/FLRW/ReducedHubble.lean — `reducedHubble`,
-   `sq_hubbleConstant_eq_reducedHubble`, `hubbleConstant_eq_reducedHubble`,
+   `FLRW.FriedmannSolution.sq_hubbleConstant_eq_mul_densityParameters`,
+   `FLRW.FriedmannSolution.sq_hubbleConstant_eq_reducedHubble`,
+   `FLRW.FriedmannSolution.hubbleConstant_eq_reducedHubble`,
    `equalityScaleFactorRadiationMatter`, `equalityScaleFactorMatterLambda`
 16. Physlib/Cosmology/FLRW/Age.lean — `age`, `age_eq`
 17. Physlib/Cosmology/FLRW/DeSitter.lean — `FLRW.deSitter`, `FLRW.friedmannSolution_deSitter`
