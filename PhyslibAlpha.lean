@@ -208,6 +208,7 @@ public import PhyslibAlpha.Mathematics.LinearCombination
 public import PhyslibAlpha.Mathematics.MeasureTheory.BoundedMeasurable
 public import PhyslibAlpha.Mathematics.MeasureTheory.IntegrationFunctional
 public import PhyslibAlpha.Mathematics.MeasureTheory.LiftingAndConditioning
+public import PhyslibAlpha.Mathematics.MeasureTheory.Pi
 public import PhyslibAlpha.Mathematics.MeasureTheory.PositiveFunctionalIntegral
 public import PhyslibAlpha.Mathematics.MeasureTheory.RegularMeasure
 public import PhyslibAlpha.Mathematics.Modules.ConjModule
@@ -478,6 +479,7 @@ public import PhyslibAlpha.ProbabilisticTheory.Examples.Square
 public import PhyslibAlpha.ProbabilisticTheory.HilbertSpace.Dynamics.Automorphism
 public import PhyslibAlpha.ProbabilisticTheory.HilbertSpace.Dynamics.Hamiltonian
 public import PhyslibAlpha.ProbabilisticTheory.HilbertSpace.JointSpectral.Basic
+public import PhyslibAlpha.ProbabilisticTheory.HilbertSpace.OrthonormalMeasurement
 public import PhyslibAlpha.ProbabilisticTheory.HilbertSpace.State.Density
 public import PhyslibAlpha.ProbabilisticTheory.HilbertSpace.State.DensityUncertainty
 public import PhyslibAlpha.ProbabilisticTheory.HilbertSpace.State.Vector
