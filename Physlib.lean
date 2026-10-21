@@ -152,6 +152,7 @@ public import Physlib.Mathematics.ForMathlib.OneParameterSubgroups.Basic
 public import Physlib.Mathematics.ForMathlib.OneParameterSubgroups.Unitary
 public import Physlib.Mathematics.ForMathlib.OrthogonalMatrix
 public import Physlib.Mathematics.ForMathlib.SchurTriangulation
+public import Physlib.Mathematics.ForMathlib.SesquilinearForm
 public import Physlib.Mathematics.ForMathlib.Trigonometry.SinSq
 public import Physlib.Mathematics.ForMathlib.Trigonometry.Tanh
 public import Physlib.Mathematics.Groups.SO3.Basic
@@ -498,6 +499,7 @@ public import Physlib.Relativity.Tensors.Contraction.CrossToEnd
 public import Physlib.Relativity.Tensors.Contraction.CrossToSlot
 public import Physlib.Relativity.Tensors.Contraction.Products
 public import Physlib.Relativity.Tensors.Contraction.Pure
+public import Physlib.Relativity.Tensors.Contraction.RankTwo
 public import Physlib.Relativity.Tensors.Contraction.SuccSuccAbove
 public import Physlib.Relativity.Tensors.Contraction.UnitTensorContraction
 public import Physlib.Relativity.Tensors.Dual
