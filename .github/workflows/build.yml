@@ -54,6 +54,8 @@ jobs:
         env:
           LAKE_CONFIG: ${{ github.workspace }}/lake-cache.toml
         run: |
+          # Remove Physlib's revisions first, since the revisions path is shared
+          rm -rf "$LAKE_CACHE_DIR/revisions/Physlib"
           lake cache get --scope="physlib-master/$(tr '/:' '--' < lean-toolchain | tr -d '[:space:]')/alpha" \
             || echo "no existing cache to restore -- building from scratch"
 
