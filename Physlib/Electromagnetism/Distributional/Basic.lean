@@ -31,10 +31,12 @@ space of `F`-valued distributions on the open set `Ω`.
 ## iii. Table of contents
 
 - A. The electromagnetic potential as a distribution
+  - A.1. Equivalence to Distributions
 
 ## iv. References
 
-* none.
+* https://www.dpmms.cam.ac.uk/~cmw50/resources/M3P18/M3P18Ch2.pdf [ref: cambridge_m3p18_ch2]
+* L. Schwartz, Théorie des distributions [ref: schwartz1950]
 -/
 
 @[expose] public section
@@ -57,6 +59,12 @@ structure DistElectromagneticPotential (d : ℕ := 3) where
   val : 𝓓'(⟨Set.univ (α := SpaceTime d), isOpen_univ⟩, Lorentz.Vector d)
 
 namespace DistElectromagneticPotential
+
+/-!
+
+### A. The electromagnetic potential as a distribution
+
+-/
 
 /-- The equivalence between an electromagnetic potential and its underlying distribution. -/
 def valEquiv {d : ℕ} :

@@ -21,7 +21,8 @@ electromagnetism. Mathematically it is related to a connection
 on a `U(1)`-bundle.
 
 We define the electromagnetic potential as a distribution from
-spacetime to contravariant Lorentz vectors.
+spacetime to contravariant Lorentz vectors. The notation "𝓓'(Ω, F)" is used for the
+space of `F`-valued distributions on the open set `Ω`.
 
 ## ii. Key results
 
@@ -30,13 +31,12 @@ spacetime to contravariant Lorentz vectors.
 ## iii. Table of contents
 
 - A. The electromagnetic potential as a distribution
-  - A.1. Constructors
-  - A.2. The derivative of the electromagnetic potential as a distribution
-  - A.3. The derivative in terms of the basis
+  - A.1. Equivalence to Distributions
 
 ## iv. References
 
-* none.
+* https://www.dpmms.cam.ac.uk/~cmw50/resources/M3P18/M3P18Ch2.pdf [ref: cambridge_m3p18_ch2]
+* L. Schwartz, Théorie des distributions [ref: schwartz1950]
 -/
 
 @[expose] public section
@@ -55,9 +55,40 @@ open Tensor
 
 /-- The electromagnetic potential as a distribution and as a tensor `A^μ`. -/
 structure DistElectromagneticPotential (d : ℕ := 3) where
-  /-- -/
-  val : 𝓓'(⟨Set.univ (α := SpaceTime d) , isOpen_univ⟩, (Lorentz.Vector d))
+  /-- The underlying spacetime distribution. -/
+  val : 𝓓'(⟨Set.univ (α := SpaceTime d), isOpen_univ⟩, Lorentz.Vector d)
 
-/- Define an equivalence between this and types
-   Use this equivalence to give this a module structure (PR)
-   Compare to constructors for TempDist-/
+namespace DistElectromagneticPotential
+
+/-!
+
+### A. The electromagnetic potential as a distribution
+
+-/
+
+/-- The equivalence between an electromagnetic potential and its underlying distribution. -/
+def valEquiv {d : ℕ} :
+    DistElectromagneticPotential d ≃
+      𝓓'(⟨Set.univ (α := SpaceTime d), isOpen_univ⟩, Lorentz.Vector d) where
+  toFun := DistElectromagneticPotential.val
+  invFun := fun T => ⟨T⟩
+  left_inv := by
+    rintro ⟨T⟩
+    rfl
+  right_inv := by
+    intro T
+    rfl
+
+noncomputable instance {d : ℕ} : AddCommGroup (DistElectromagneticPotential d) :=
+  Equiv.addCommGroup valEquiv
+
+noncomputable instance {d : ℕ} : Module ℝ (DistElectromagneticPotential d) :=
+  AddEquiv.module ℝ { valEquiv with map_add' _ _ := rfl }
+
+/-- The linear equivalence between an electromagnetic potential and its underlying distribution. -/
+noncomputable def valLinearEquiv {d : ℕ} :
+    DistElectromagneticPotential d ≃ₗ[ℝ]
+      𝓓'(⟨Set.univ (α := SpaceTime d), isOpen_univ⟩, Lorentz.Vector d) :=
+  AddEquiv.linearEquiv ℝ { valEquiv with map_add' _ _ := rfl }
+
+end DistElectromagneticPotential
