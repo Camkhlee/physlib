@@ -1,7 +1,10 @@
 module
 
+public import Physlib.ClassicalFieldTheory.GaugeTheory.LocalGaugeData.Basic
 public import Physlib.ClassicalFieldTheory.Local.Variation
 public import Physlib.ClassicalMechanics.Basic
+public import Physlib.ClassicalMechanics.ConfigurationSpace.Basic
+public import Physlib.ClassicalMechanics.ConfigurationSpace.Variation
 public import Physlib.ClassicalMechanics.DampedHarmonicOscillator.Basic
 public import Physlib.ClassicalMechanics.DampedHarmonicOscillator.Solution
 public import Physlib.ClassicalMechanics.EulerLagrange
@@ -15,6 +18,7 @@ public import Physlib.ClassicalMechanics.HarmonicOscillator.Geometric.KineticEne
 public import Physlib.ClassicalMechanics.HarmonicOscillator.Geometric.Trajectory
 public import Physlib.ClassicalMechanics.HarmonicOscillator.Solution
 public import Physlib.ClassicalMechanics.HarmonicOscillator.WithDim
+public import Physlib.ClassicalMechanics.Lagrangian.Basic
 public import Physlib.ClassicalMechanics.Lagrangian.TotalDerivativeEquivalence
 public import Physlib.ClassicalMechanics.Mass.MassUnit
 public import Physlib.ClassicalMechanics.OrbitalMechanics.VisViva
@@ -47,6 +51,8 @@ public import Physlib.ClassicalMechanics.WaveEquation.HarmonicWave
 public import Physlib.CondensedMatter.BandTheory.Basic
 public import Physlib.CondensedMatter.Basic
 public import Physlib.CondensedMatter.Crystal.Basic
+public import Physlib.CondensedMatter.Crystal.Bonds
+public import Physlib.CondensedMatter.Crystal.PeriodicGraph
 public import Physlib.CondensedMatter.LatticeModels.Basic
 public import Physlib.CondensedMatter.ManyBody.Basic
 public import Physlib.CondensedMatter.Response.Basic
@@ -57,16 +63,22 @@ public import Physlib.Cosmology.Basic
 public import Physlib.Cosmology.FLRW.Age
 public import Physlib.Cosmology.FLRW.Basic
 public import Physlib.Cosmology.FLRW.ConformalTime
+public import Physlib.Cosmology.FLRW.DeSitter
 public import Physlib.Cosmology.FLRW.DensityParameters
 public import Physlib.Cosmology.FLRW.Distances
-public import Physlib.Cosmology.FLRW.Dynamics
+public import Physlib.Cosmology.FLRW.EnergyConditions
+public import Physlib.Cosmology.FLRW.FriedmannSolution
 public import Physlib.Cosmology.FLRW.MatterContent
 public import Physlib.Cosmology.FLRW.ReducedHubble
 public import Physlib.Cosmology.FLRW.Solutions
+public import Physlib.Cosmology.FLRW.SpecificCases.EinsteinDeSitter
+public import Physlib.Cosmology.FLRW.SpecificCases.PowerLaw
+public import Physlib.Cosmology.FLRW.SpecificCases.RadiationDominated
 public import Physlib.Electromagnetism.Basic
 public import Physlib.Electromagnetism.Charge.ChargeUnit
 public import Physlib.Electromagnetism.Current.CircularCoil
 public import Physlib.Electromagnetism.Current.InfiniteWire
+public import Physlib.Electromagnetism.Distributional.Basic
 public import Physlib.Electromagnetism.Dynamics.Basic
 public import Physlib.Electromagnetism.Dynamics.CurrentDensity
 public import Physlib.Electromagnetism.Dynamics.Hamiltonian
@@ -131,6 +143,7 @@ public import Physlib.Mathematics.ForMathlib.FDerivCurry
 public import Physlib.Mathematics.ForMathlib.Fin
 public import Physlib.Mathematics.ForMathlib.Fin.Involutions
 public import Physlib.Mathematics.ForMathlib.HasTemperateGrowth
+public import Physlib.Mathematics.ForMathlib.Integration.Basic
 public import Physlib.Mathematics.ForMathlib.LinearMaps
 public import Physlib.Mathematics.ForMathlib.LinearPMap
 public import Physlib.Mathematics.ForMathlib.List
@@ -145,6 +158,7 @@ public import Physlib.Mathematics.ForMathlib.Trigonometry.Tanh
 public import Physlib.Mathematics.Groups.SO3.Basic
 public import Physlib.Mathematics.Groups.SpecialUnitary.LieAlgebra.Adjoint
 public import Physlib.Mathematics.Groups.SpecialUnitary.LieAlgebra.Basic
+public import Physlib.Mathematics.Groups.SpecialUnitary.LieAlgebra.Contractions
 public import Physlib.Mathematics.Groups.SpecialUnitary.LieAlgebra.GellMann.Adjoint
 public import Physlib.Mathematics.Groups.SpecialUnitary.LieAlgebra.GellMann.Basic
 public import Physlib.Mathematics.Groups.SpecialUnitary.LieAlgebra.GellMann.SpecialCases
@@ -186,7 +200,9 @@ public import Physlib.Meta.TODO.Basic
 public import Physlib.Meta.TODO.Global
 public import Physlib.Meta.TransverseTactics
 public import Physlib.Optics.Basic
+public import Physlib.Optics.Frequency
 public import Physlib.Optics.Polarization.Basic
+public import Physlib.Optics.Wavelength
 public import Physlib.Particles.BeyondTheStandardModel.GeorgiGlashow.Basic
 public import Physlib.Particles.BeyondTheStandardModel.PatiSalam.Basic
 public import Physlib.Particles.BeyondTheStandardModel.RHN.AnomalyCancellation.Basic
@@ -265,6 +281,7 @@ public import Physlib.ProbabilisticTheory.Effect.Complement
 public import Physlib.ProbabilisticTheory.Effect.Convex
 public import Physlib.ProbabilisticTheory.Effect.Metric
 public import Physlib.ProbabilisticTheory.Effect.Sharp
+public import Physlib.ProbabilisticTheory.LocalNet.Basic
 public import Physlib.ProbabilisticTheory.OrderUnit.Archimedean
 public import Physlib.ProbabilisticTheory.OrderUnit.Basic
 public import Physlib.ProbabilisticTheory.OrderUnit.Cone
@@ -404,10 +421,15 @@ public import Physlib.QuantumMechanics.Operators.Unbounded
 public import Physlib.QuantumMechanics.Operators.Uncertainty
 public import Physlib.QuantumMechanics.PlanckConstant
 public import Physlib.QuantumMechanics.PoschlTeller.Basic
+public import Physlib.QuantumMechanics.PoschlTeller.Scattering
 public import Physlib.QuantumMechanics.QuantumSystem.Basic
 public import Physlib.QuantumMechanics.RectangularBarrier.Basic
 public import Physlib.QuantumMechanics.SpaceDQuantumSystem
 public import Physlib.Relativity.Bispinors.Basic
+public import Physlib.Relativity.Causality.Basic
+public import Physlib.Relativity.Causality.CausallyFollows
+public import Physlib.Relativity.Causality.LightLike
+public import Physlib.Relativity.Causality.TimeLike
 public import Physlib.Relativity.CliffordAlgebra
 public import Physlib.Relativity.Fermions.Dirac.Basic
 public import Physlib.Relativity.Fermions.Dirac.GammaMatrices
@@ -500,10 +522,6 @@ public import Physlib.Relativity.Tensors.RealTensor.ToComplex
 public import Physlib.Relativity.Tensors.RealTensor.Units.Basic
 public import Physlib.Relativity.Tensors.RealTensor.Units.Pre
 public import Physlib.Relativity.Tensors.RealTensor.Vector.Basic
-public import Physlib.Relativity.Tensors.RealTensor.Vector.Causality.Basic
-public import Physlib.Relativity.Tensors.RealTensor.Vector.Causality.CausallyFollows
-public import Physlib.Relativity.Tensors.RealTensor.Vector.Causality.LightLike
-public import Physlib.Relativity.Tensors.RealTensor.Vector.Causality.TimeLike
 public import Physlib.Relativity.Tensors.RealTensor.Vector.MinkowskiProduct
 public import Physlib.Relativity.Tensors.RealTensor.Vector.Pre.Basic
 public import Physlib.Relativity.Tensors.RealTensor.Vector.Pre.Contraction
@@ -511,6 +529,7 @@ public import Physlib.Relativity.Tensors.RealTensor.Vector.Pre.Modules
 public import Physlib.Relativity.Tensors.RealTensor.Vector.Representation
 public import Physlib.Relativity.Tensors.RealTensor.Vector.Tensorial
 public import Physlib.Relativity.Tensors.RealTensor.Velocity.Basic
+public import Physlib.Relativity.Tensors.RealTensor.Velocity.Deriv
 public import Physlib.Relativity.Tensors.Reindexing
 public import Physlib.Relativity.Tensors.TensorSpecies.Basic
 public import Physlib.Relativity.Tensors.TensorSpecies.DualBasis
@@ -555,6 +574,7 @@ public import Physlib.SpaceAndTime.SpaceTime.LorentzAction
 public import Physlib.SpaceAndTime.SpaceTime.SpaceTimeAlgebra.Basic
 public import Physlib.SpaceAndTime.SpaceTime.SpaceTimeAlgebra.Star
 public import Physlib.SpaceAndTime.SpaceTime.SpaceTimeAlgebra.TaylorSeries
+public import Physlib.SpaceAndTime.SpaceTime.SpaceTimeDerivAlgebra.Action
 public import Physlib.SpaceAndTime.SpaceTime.SpaceTimeDerivAlgebra.Basic
 public import Physlib.SpaceAndTime.SpaceTime.TimeSlice
 public import Physlib.SpaceAndTime.Time.Basic
