@@ -22,7 +22,8 @@ on a `U(1)`-bundle.
 
 We define the electromagnetic potential as a distribution from
 spacetime to contravariant Lorentz vectors. The notation "𝓓'(Ω, F)" is used for the
-space of `F`-valued distributions on the open set `Ω`.
+space of `F`-valued distributions on the open set `Ω`. It is also worth noting here that this
+definition of distribution is over the reals ℝ.
 
 ## ii. Key results
 
@@ -62,7 +63,7 @@ namespace DistElectromagneticPotential
 
 /-!
 
-### A. The electromagnetic potential as a distribution
+### A.1. Equivalence to Distributions
 
 -/
 
