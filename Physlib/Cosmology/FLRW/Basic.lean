@@ -6,7 +6,7 @@ Authors: Luis Gabriel C. Bariuan, Joseph Tooby-Smith
 module
 
 public import Mathlib.Analysis.SpecialFunctions.Trigonometric.DerivHyp
-public import Physlib.Meta.Linters.Sorry
+public import Physlib.Meta.Linters.Pseudo
 public import Physlib.Meta.TODO.Basic
 public import Physlib.SpaceAndTime.Time.Derivatives
 public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
@@ -356,9 +356,6 @@ TODO "Define the Hubble constant `H₀ = H(t₀)`, the present-day value of the 
 TODO "Express the Hubble parameter as a function of the scale factor, `H(a)`, and of the
   redshift, `H(z)`, using `a = 1 / (1 + z)` with the normalization `a₀ = 1`; define the
   reduced Hubble function `E(z) = H(z) / H₀`."
-
-TODO "Prove the change-of-variable relations underlying the age and distance integrals:
-  `∂ₜ a = a * hubbleConstant a`, `dt = − dz / ((1 + z) * H)` and `dχ = c * dz / H`."
 
 /-- The deceleration parameter defined in terms of the scale factor
   as `- (dₜdₜ a) a / (dₜ a)^2`.

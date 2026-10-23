@@ -208,6 +208,7 @@ public import PhyslibAlpha.Mathematics.LinearCombination
 public import PhyslibAlpha.Mathematics.MeasureTheory.BoundedMeasurable
 public import PhyslibAlpha.Mathematics.MeasureTheory.IntegrationFunctional
 public import PhyslibAlpha.Mathematics.MeasureTheory.LiftingAndConditioning
+public import PhyslibAlpha.Mathematics.MeasureTheory.Pi
 public import PhyslibAlpha.Mathematics.MeasureTheory.PositiveFunctionalIntegral
 public import PhyslibAlpha.Mathematics.MeasureTheory.RegularMeasure
 public import PhyslibAlpha.Mathematics.Modules.ConjModule
@@ -237,7 +238,9 @@ public import PhyslibAlpha.Mathematics.RepresentationTheory.Sl2.Construction
 public import PhyslibAlpha.Mathematics.RepresentationTheory.Sl2.Schur
 public import PhyslibAlpha.Mathematics.RepresentationTheory.Sl2.TensorDecomposition
 public import PhyslibAlpha.Mathematics.RepresentationTheory.Sl2.TensorHighestWeight
+public import PhyslibAlpha.Mathematics.RepresentationTheory.Sl2.TensorIntertwiner
 public import PhyslibAlpha.Mathematics.RepresentationTheory.Sl2.Weights
+public import PhyslibAlpha.Mathematics.SpecialFunctions.Laguerre
 public import PhyslibAlpha.Mathematics.SubalgebraRestriction
 public import PhyslibAlpha.Mathematics.Sublinear
 public import PhyslibAlpha.Mathematics.SymmetricAlgebra
@@ -476,6 +479,7 @@ public import PhyslibAlpha.ProbabilisticTheory.Examples.Square
 public import PhyslibAlpha.ProbabilisticTheory.HilbertSpace.Dynamics.Automorphism
 public import PhyslibAlpha.ProbabilisticTheory.HilbertSpace.Dynamics.Hamiltonian
 public import PhyslibAlpha.ProbabilisticTheory.HilbertSpace.JointSpectral.Basic
+public import PhyslibAlpha.ProbabilisticTheory.HilbertSpace.OrthonormalMeasurement
 public import PhyslibAlpha.ProbabilisticTheory.HilbertSpace.State.Density
 public import PhyslibAlpha.ProbabilisticTheory.HilbertSpace.State.DensityUncertainty
 public import PhyslibAlpha.ProbabilisticTheory.HilbertSpace.State.Vector
@@ -655,12 +659,16 @@ public import PhyslibAlpha.ProbabilisticTheory.Weight.Continuous
 public import PhyslibAlpha.ProbabilisticTheory.Weight.Extension
 public import PhyslibAlpha.QuantumMechanics.AngularMomentum.Addition
 public import PhyslibAlpha.QuantumMechanics.AngularMomentum.Basic
+public import PhyslibAlpha.QuantumMechanics.AngularMomentum.SpinOrbit
+public import PhyslibAlpha.QuantumMechanics.AngularMomentum.WignerEckart
 public import PhyslibAlpha.QuantumMechanics.Blackbody.RayleighJeans
+public import PhyslibAlpha.QuantumMechanics.Foundations.OntologicalModel
 public import PhyslibAlpha.QuantumMechanics.HarmonicOscillator.LadderSystem
 public import PhyslibAlpha.QuantumMechanics.HarmonicOscillator.Vacuum
 public import PhyslibAlpha.QuantumMechanics.HilbertSpaces.FiniteTarget.Operators
 public import PhyslibAlpha.QuantumMechanics.HilbertSpaces.FiniteTarget.Product
 public import PhyslibAlpha.QuantumMechanics.HilbertSpaces.FiniteTarget.ProductState
+public import PhyslibAlpha.QuantumMechanics.Hydrogen.RadialFunctions
 public import PhyslibAlpha.QuantumMechanics.QuantumHarmonicOscillator
 public import PhyslibAlpha.QuantumMechanics.StinespringDilation
 public import PhyslibAlpha.Relativity.Fermions.Dirac.MinimalDimension
