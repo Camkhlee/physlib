@@ -96,7 +96,7 @@ noncomputable def valLinearEquiv {d : ℕ} :
 
 /-!
 
-### B. Functions as distributions
+## B. Functions as distributions
 
 -/
 
