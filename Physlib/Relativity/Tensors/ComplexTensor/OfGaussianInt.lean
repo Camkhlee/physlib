@@ -94,14 +94,14 @@ lemma contr_basis_gaussianInt {c : complexLorentzTensor.Color}
     rw [Fermion.RightHandedWeyl.contr_basis]
     simp
   | Color.up =>
-    change Lorentz.ContrℂModule.contr
-      (Lorentz.complexContrBasisFin4 i ⊗ₜ Lorentz.complexCoBasisFin4 j) = _
-    rw [Lorentz.ContrℂModule.contr_basis]
+    change Lorentz.ComplexVector.contr
+      (Lorentz.ComplexVector.basisFin4 i ⊗ₜ Lorentz.ComplexCoVector.basisFin4 j) = _
+    rw [Lorentz.ComplexVector.contr_basis]
     simp
   | Color.down =>
-    change Lorentz.ContrℂModule.contr
-      (Lorentz.complexContrBasisFin4 i ⊗ₜ Lorentz.complexCoBasisFin4 j) = _
-    rw [Lorentz.ContrℂModule.contr_basis]
+    change Lorentz.ComplexVector.contr
+      (Lorentz.ComplexVector.basisFin4 i ⊗ₜ Lorentz.ComplexCoVector.basisFin4 j) = _
+    rw [Lorentz.ComplexVector.contr_basis]
     simp
 open TensorSpecies
 open Tensor
