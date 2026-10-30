@@ -5,8 +5,7 @@ Authors: Gregory J. Loges
 -/
 module
 
-public import Mathlib.Algebra.Module.Defs
-public import Mathlib.Basic.Real.Basic
+public import Mathlib.Analysis.InnerProductSpace.PiL2
 /-!
 
 # Wave Vector Space
@@ -17,8 +16,9 @@ In this module we define the type `WaveVectorSpace d` corresponding to the `d`-d
 space of (angular) wave vectors in `Space d`.
 
 In contrast to `Space d`, `WaveVectorSpace d` has a distinguished zero;
-the purpose of this file is to define this zero and the structure of a `Module`
-on `WaveVectorSpace d`, neither of which requires any non-canonical choices.
+the purpose of this file is to define this zero, the structure of a `Module`
+on `WaveVectorSpace d`, and the structure of a real `InnerProductSpace` on `WaveVectorSpace d`,
+none of which requires any non-canonical choices.
 
 `WaveVectorSpace d` is implemented as a structure with a field `val : Fin d → ℝ`
 rather than as an `abbrev` of `EuclideanSpace ℝ (Fin d)` or a `def` of a type with value
@@ -29,6 +29,8 @@ see `Physlib.SpaceAndTime.Space.Basic` for a discussion of the (dis)advantages o
 
 - `WaveVectorSpace d` : the space of wave vectors in `Space d`
 - `instModuleReal` : `WaveVectorSpace d` is a module over `ℝ`
+- `instInnerProductSpaceReal` : `WaveVectorSpace d` is a real inner product space
+- `equivEuclideanSpace` : the linear isometric equivalence between `WaveVectorSpace d` and `ℝᵈ`
 
 ## iii. Table of contents
 
@@ -39,6 +41,8 @@ see `Physlib.SpaceAndTime.Space.Basic` for a discussion of the (dis)advantages o
   - B.3. Zero
   - B.4. Additive commutative group
   - B.5. Module over `ℝ`
+  - B.6. Inner product space
+    - B.6.1. Linear isometric equivalence with `ℝᵈ`
 
 ## iv. References
 
@@ -153,5 +157,58 @@ instance instModuleReal : Module ℝ (WaveVectorSpace d) where
   smul_add _ _ _ := by ext; simp [mul_add]
   add_smul _ _ _ := by ext; simp [add_mul]
   zero_smul _ := by ext; simp
+
+/-!
+### B.6. Inner product space
+-/
+
+section InnerProduct
+
+open scoped RealInnerProductSpace
+
+instance : Inner ℝ (WaveVectorSpace d) where
+  inner k₁ k₂ := ∑ i, k₁ i * k₂ i
+
+lemma inner_apply : ⟪k₁, k₂⟫ = ∑ i, k₁ i * k₂ i := rfl
+
+instance : InnerProductSpace.Core ℝ (WaveVectorSpace d) where
+  conj_inner_symm _ _ := by simp [inner_apply, mul_comm]
+  re_inner_nonneg k := Fintype.sum_nonneg fun i ↦ mul_self_nonneg (k i)
+  add_left _ _ _ := by simp [inner_apply, add_mul, Finset.sum_add_distrib]
+  smul_left _ _ _ := by simp [inner_apply, mul_assoc, Finset.mul_sum]
+  definite _ h := by
+    apply eq_of_apply
+    apply (Fintype.sum_eq_zero_iff_of_nonneg fun i ↦ by simp [mul_self_nonneg]).mp at h
+    simpa using congrFun h
+
+noncomputable instance instNormedAddCommGroup : NormedAddCommGroup (WaveVectorSpace d) :=
+  instCoreReal.toNormedAddCommGroup
+
+noncomputable instance instInnerProductSpaceReal : InnerProductSpace ℝ (WaveVectorSpace d) :=
+  InnerProductSpace.ofCore instCoreReal.toCore
+
+lemma norm_eq : ‖k‖ = √(∑ i, k i ^ 2) := by
+  simp_rw [norm_eq_sqrt_real_inner, inner_apply, pow_two]
+
+lemma norm_sq_eq : ‖k‖ ^ 2 = ∑ i, k i ^ 2 := by
+  simp_rw [← real_inner_self_eq_norm_sq, inner_apply, pow_two]
+
+end InnerProduct
+
+/-!
+#### B.6.1. Linear isometric equivalence with `ℝᵈ`
+-/
+
+/-- The linear isometric equivalence between `WaveVectorSpace d` and `ℝᵈ`. -/
+def equivEuclideanSpace : WaveVectorSpace d ≃ₗᵢ[ℝ] EuclideanSpace ℝ (Fin d) where
+  toFun k := WithLp.toLp 2 k.val
+  map_add' _ _ := WithLp.toLp_add 2 _ _
+  map_smul' _ _ := WithLp.toLp_smul 2 _ _
+  invFun v := ⟨v.ofLp⟩
+  norm_map' _ := by simp [norm_eq, EuclideanSpace.norm_eq]
+
+@[simp]
+lemma finrank_waveVectorSpace : Module.finrank ℝ (WaveVectorSpace d) = d :=
+  equivEuclideanSpace.toLinearEquiv.finrank_eq ▸ finrank_euclideanSpace_fin
 
 end WaveVectorSpace
