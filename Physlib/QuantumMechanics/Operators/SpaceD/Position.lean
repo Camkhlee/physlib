@@ -5,7 +5,8 @@ Authors: Gregory J. Loges
 -/
 module
 
-public import Physlib.QuantumMechanics.Operators.Multiplication
+public import Physlib.QuantumMechanics.Operators.SelfAdjoint
+public import Physlib.QuantumMechanics.Operators.SpaceD.Multiplication
 public import Physlib.QuantumMechanics.HilbertSpaces.SpaceD.PolyBddSchwartzSubmodule
 public import Physlib.SpaceAndTime.Space.Norm.Regularized
 public import Physlib.SpaceAndTime.Space.Derivatives.Basic
@@ -44,7 +45,6 @@ Notation:
   - B.1. Position vector
   - B.2. Radius powers (regularized)
   - B.3. Radius powers
-    - B.3.1. As limit of regularized operators
 
 ## iv. References
 
